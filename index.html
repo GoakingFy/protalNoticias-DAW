@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
     <title>Portal de noticias | Joaquín</title>
 </head>
 <body>
@@ -21,18 +22,44 @@
             <li><a href="">Info</a></li>
         </ul>
     </nav>
-    <header>
+    <header class="container_header">
         <div class="container-header-title">
             <h1 class="title-portal">Bienvenido al portal de noticias <span>+ "simple" de esta clase</span></h1>
-            <a class="a-showNews" href="">Mostar noticias</a>
+            <a class="a-showNews" href="#m_news">Mostar noticias</a>
         </div>
 
         
         <div class="container-img-header">
             <!-- <img src="src/img/allPeeps.svg" alt=""> -->
         </div> 
-        
+
         
     </header>
+
+    <main  id="m_news" class="main_news">
+        <div class="container_inputs">
+            <input type="search" name="" class="inpt_search">
+                <label for="country">Country:</label>
+
+                    <select name="country" id="country">
+                    <option value="es">España</option>
+                    <option value="fr">Francia</option>
+                    <option value="us">Estados Unidos</option>
+                    <option value="it">Italia</option>
+                </select>
+
+               
+        </div>
+        <div class="container_news">
+        </div>
+           
+    </main>
+
+    <section class="container_board">
+        <canvas class="board"></canvas>
+    </section>
+    <footer>
+
+    </footer>
 </body>
 </html>
