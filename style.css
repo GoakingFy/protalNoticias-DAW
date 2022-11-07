@@ -201,6 +201,45 @@ body{ cursor: url("src/img/cursorLapiz.png"),auto;}
     font-family: 'Gloria Hallelujah', cursive;
     font-size: 15px;
 }
+.h2_title_news{
+    font-family: 'Gloria Hallelujah', cursive;
+    font-size: 50px;
+    text-align: center;
+}
+
+.inpt_search{
+    border: none;
+    border-bottom: 5px dashed;
+    padding: 10px;
+    width: auto;
+    margin-right: 80px;
+}
+.inpt_search::placeholder{
+    font-family: 'Gloria Hallelujah', cursive;
+    font-size: 17px;
+}
+
+label[for="country"]{
+    font-family: 'Gloria Hallelujah', cursive;
+    margin-right: 25px;
+}
+
+select{
+    padding: 10px;
+    border: 4px dashed;
+}
+select:focus{
+    outline: none;
+}
+
+
+.container_inputs{
+    display: flex;
+    width: 100%;
+    height: 100px;
+    justify-content: center;
+    align-items: center;
+}
 
 .container_board{
     width: 100%;
@@ -211,13 +250,17 @@ body{ cursor: url("src/img/cursorLapiz.png"),auto;}
     margin: 50px 0px;
     
 }
-.board{
+#board{
     width: 500px;
     height: 500px;
     border: 10px solid;
 }
+
+
+
 footer{
     width: 100%;
     height: 300px;
     background-color: #000;
 }
+
