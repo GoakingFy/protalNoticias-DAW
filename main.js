@@ -65,31 +65,38 @@ function printNews(data){
 
 
 
-function draw(cX,cY){
-    ctx.beginPath();
-    ctx.moveTo(initialX ,initialY );
+let dif = $board.getBoundingClientRect()
+let painting,color,linewidth,difX,difY;
 
-    ctx.lineWith = 50;
-    ctx.strokeStyle = "#000"
-    ctx.lineCap = "round"
-    ctx.lineJoin = "round"
-    ctx.lineTo(cX ,cY )
-    ctx.stroke()
-
-    initialX = cX ;
-    initialY = cY ;
-}
-
-
-const mouseDown = (e)=>{
-    console.log(e , e.offsetX , e.offsetY)
-    initialX = e.offsetX ;
+$board.addEventListener("mousedown" , (e)=>{
     
-    initialY = e.offsetY ;
-    console.log(initialX,initialY)
-    draw(initialX,initialY)
-}
+    difX = Math.round(e.offsetX - dif.left);
+    difY = Math.round( e.offsetY  - dif.top ) 
+    painting = true
+    console.log( )
+    ctx.beginPath()
+})
 
-$board.addEventListener("mousedown" , mouseDown)
+$board.addEventListener("mousemove" , (e)=>{
+   
+    if(painting){
+       
+        dibujar(difX,difY,Math.round(e.offsetX-dif.left),Math.round(e.offsetY - dif.top))
+        difX = Math.round(e.offsetX - dif.left);
+        difY = Math.round(e.offsetY - dif.top) 
+    }
+})
 
+$board.addEventListener("mouseup" , (e)=>{
+    ctx.closePath()
+    painting = false
+})
+
+const dibujar = (x1,y1,x2,y2)=>{
   
+ctx.strokeStyle = "#000"
+ctx.linewidth = 40
+ctx.moveTo(x1,y1)
+ctx.lineTo(x2,y2)
+ctx.stroke()
+}

@@ -214,6 +214,9 @@ body{ cursor: url("src/img/cursorLapiz.png"),auto;}
     width: auto;
     margin-right: 80px;
 }
+.inpt_search:focus{
+    outline: none;
+}
 .inpt_search::placeholder{
     font-family: 'Gloria Hallelujah', cursive;
     font-size: 17px;
@@ -245,17 +248,66 @@ select:focus{
     width: 100%;
     height: auto;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+   justify-content: center;
+   align-items: center;
     margin: 50px 0px;
+    position: relative;
     
 }
+
+.container_board h2{
+    position: relative;
+    font-family: 'Gloria Hallelujah', cursive;
+    font-size: 40px;
+    margin: 0px  0px 50px 0px;
+    transform: rotate(20deg);
+    left: 80px;
+}
 #board{
+
     width: 500px;
     height: 500px;
     border: 10px solid;
+    justify-self: flex-start;
+    cursor: pointer;
+    transition: all .3s ease;
+    box-shadow: 4px 4px #222323, 8px 8px #656564, 12px 12px #b7b8b8;
+}
+#board:hover{
+    
+    box-shadow: 4px 4px #416474, 8px 8px #ff5d30, 12px 12px #fff046;
 }
 
+
+
+
+.peep-sitting-11{
+    width: 300px;
+    height: 440px;
+    margin-left: 200px;
+    transform: scaleX(-1);
+}
+
+.container_draw{
+    width: 350px;
+    height: 350px;
+    border: 8px dashed;
+    margin: 20px;
+    border-radius: 50%;
+    /* 
+    background-image: url("src/img/fotoDibujo.png");
+    background-position: center;
+    background-size: cover;
+   */
+overflow: hidden;
+}
+.container_draw img{
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    object-position: center;
+}
 
 
 footer{
