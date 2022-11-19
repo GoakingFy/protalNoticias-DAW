@@ -272,7 +272,7 @@ select:focus{
     justify-self: flex-start;
     cursor: pointer;
     transition: all .3s ease;
-    box-shadow: 4px 4px #222323, 8px 8px #656564, 12px 12px #b7b8b8;
+    /* box-shadow: 4px 4px #222323, 8px 8px #656564, 12px 12px #b7b8b8; */
 }
 #board:hover{
     
@@ -310,6 +310,7 @@ overflow: hidden;
 }
 
 .section_circles{
+    position: relative;
     width: 100%;
     height: 8500px;
    
@@ -334,6 +335,16 @@ overflow: hidden;
     justify-content: center;
     align-items: center;
 
+}
+
+.title_section_circles{
+    position: absolute;
+    color: red;
+   bottom: 0;
+   left: 0;
+   top: 0;
+    right: 0;
+    margin:auto;
 }
 
 footer{
