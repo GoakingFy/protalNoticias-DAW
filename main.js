@@ -30,19 +30,36 @@ const getData = async (country = "es", query = "")=>{
         $container_news.innerHTML = ``
         printNews(data.results)
         console.log(data.results)
+        data.results.forEach(elm =>{
+            console.log(elm.link.split("/")[2])    
+        })
+        
     })
 
 }
 
 getData()
-function printNews(data){
+
+function getFavicon (){
+    fetch(`https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://${url}&size=128`)
+    .then((response)=> response.json())
+    .then((data)=> {
+        $container_news.innerHTML = ``
+        printNews(data.results)
+        console.log(data.results)
+        
+    })
+
+}
+
+function printNews(data,favicon){
     data.slice(-9).forEach(result => {
         $container_news.innerHTML += `
         <a href="${result.link}" target="_blank" class="news">
                 <div class="container_info">
                     <header class="container_header_news">
                         <div class="container_source_id">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/6/66/CNN_International_logo.svg" alt="">
+                            <img src=https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://${result.link.split("/")[2]}&size=128 alt="">
                             <p>${result.source_id != null ? result.source_id : "Desconocido" }</p>
                         </div>
     
