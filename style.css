@@ -143,6 +143,9 @@ body{ cursor: url("src/img/cursorLapiz.png"),auto;}
     align-items: center;
     
 }
+.container_header_news p{
+   text-transform: capitalize;
+}
 .container_info{
     width: 80%;
     padding: 10px;

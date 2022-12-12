@@ -28,31 +28,26 @@ const getData = async (country = "es", query = "")=>{
     .then((response)=> response.json())
     .then((data)=> {
         $container_news.innerHTML = ``
-        printNews(data.results)
-        console.log(data.results)
-        data.results.forEach(elm =>{
-            console.log(elm.link.split("/")[2])    
-        })
         
+        data.results.length == 0 ? printNotFoundQuery() : printNews(data.results)      
+    }).catch((error) =>{
+        console.log("Hay un error " + error)
     })
+    
 
 }
 
 getData()
 
-function getFavicon (){
-    fetch(`https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://${url}&size=128`)
-    .then((response)=> response.json())
-    .then((data)=> {
-        $container_news.innerHTML = ``
-        printNews(data.results)
-        console.log(data.results)
-        
-    })
+
+function printNotFoundQuery(){
+    $container_news.innerHTML = ``;
+    $container_news.innerHTML = `No hay resultados en su busqueda`;
 
 }
 
-function printNews(data,favicon){
+
+function printNews(data){
     data.slice(-9).forEach(result => {
         $container_news.innerHTML += `
         <a href="${result.link}" target="_blank" class="news">
