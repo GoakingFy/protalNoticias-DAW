@@ -1,0 +1,35 @@
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+a{
+    margin: 20px;
+   text-decoration: none;
+   color: #000;
+   border-bottom: 2px dashed;
+}
+.about{
+    padding: 50px;
+    width: 1000px;
+    
+    border: 5px dashed;
+display: flex;
+}
+
+.about .img_person{
+    margin-right: 40px;
+    width: 300px;
+    height: 400px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.descripcion{
+    max-width: 500px;
+    width: 500px;
+}

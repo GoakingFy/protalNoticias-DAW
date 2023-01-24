@@ -2,11 +2,8 @@ const API_KEY = "pub_13126a25d3902e491c238f9d749f1b60f9c7e";
 const $container_news = document.querySelector(".container_news")
 const $country_select = document.getElementById("country")
 const $inp_search = document.querySelector(".inpt_search")
-const $board  = document.getElementById("board")
-const ctx = $board.getContext('2d');
-let  canvasPressed = false;
-let initialX;
-let initialY;
+
+
 const $span_binary = document.querySelector(".span_binary")
 
 
@@ -76,39 +73,3 @@ function printNews(data){
 }
 
 
-
-let dif = $board.getBoundingClientRect()
-let painting,color,linewidth,difX,difY;
-
-$board.addEventListener("mousedown" , (e)=>{
-    
-    difX = Math.round(e.offsetX - dif.left);
-    difY = Math.round( e.offsetY  - dif.top ) 
-    painting = true
-    console.log( )
-    ctx.beginPath()
-})
-
-$board.addEventListener("mousemove" , (e)=>{
-   
-    if(painting){
-       
-        dibujar(difX,difY,Math.round(e.offsetX-dif.left),Math.round(e.offsetY - dif.top))
-        difX = Math.round(e.offsetX - dif.left);
-        difY = Math.round(e.offsetY - dif.top) 
-    }
-})
-
-$board.addEventListener("mouseup" , (e)=>{
-    ctx.closePath()
-    painting = false
-})
-
-const dibujar = (x1,y1,x2,y2)=>{
-  
-ctx.strokeStyle = "#000"
-ctx.linewidth = 40
-ctx.moveTo(x1,y1)
-ctx.lineTo(x2,y2)
-ctx.stroke()
-}

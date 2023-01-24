@@ -10,21 +10,30 @@
     <link rel="stylesheet" href="style.css">
     <script src="main.js" defer></script>
     <script src="scrollEffect.js" defer></script>
+    <script src="selectPhoto.js" defer></script>
+    <script src="loadImagePerson.js" defer ></script>
+    <script src="effectScrollCajas.js" defer ></script>
 
     <title>Portal de noticias | Joaquín</title>
 </head>
 <body>
+    <a href="#main" class="subir">↟</a>
     <nav class="nav-desktop">
 
-        <i class="icon-logo">PNJ</i>
+       
 
         <ul>
             <li><a href="">Home</a></li>
-            <li><a href="about-me.html">About</a></li>
-            <li><a href="">Info</a></li>
+          
+            <li><a href="#noticia">Sé la noticia</a></li>
+            <li><a href="#about">Info</a></li>
+            <li><a href="#info">Desarrollo</a></li>
+            <li><a href="#map_web">Mapa web</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+            
         </ul>
     </nav>
-    <header class="container_header">
+    <header id="main" class="container_header">
         <div class="container-header-title">
             <h1 class="title-portal">Bienvenido al portal de noticias <span>+ "simple" de esta clase</span></h1>
             <a class="a-showNews" href="#m_news">Mostar noticias</a>
@@ -58,11 +67,42 @@
            
     </main>
 
-    <section class="container_board">
-        <h2>Relajate y dibuja!!</h2>
+    <section id="noticia" class="container_board">
+        <h2>Crea tu propia noticia</h2>
+        <p>Haz click en el cuadrado para seleccionar la portada y empezar a crear</p>
        
         <div class="board_utilities">
-            <canvas id="board"></canvas>
+            <div class="container_noticia">
+                <label for="inp_file">
+                    <canvas id="board"></canvas>
+                </label>
+                <div class="container_info_noticia_perso">
+                   
+                    <header class="container_header_news">
+                        <div class="container_source_id">
+                            <img src=https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://${result.link.split("/")[2]}&size=128 alt="">
+                            <p>noticias Joaquin</p>
+                        </div>
+    
+                        <p class="pub_date">0:0:0</p>
+                    </header>
+                    <main class="content_main">
+                        <h3 class="title_new">Titulo de ejemplo</h3>
+                        <p class="desc_new">${result.description != null ? result.description : "Descripción no disponible" }</p>
+    
+                    </main>
+                    
+                </div>
+            </div>
+
+            <div class="container_select_noti">
+                <h3>Elije una tematica</h3>
+                <button id="select_template_1">En busca y captura</button>
+                <button id="select_template_2" >cambio climatico</button>
+                <button id="select_template_3" >Crisis en occidente</button>
+            </div>
+            
+            <input type="file" name="photo_noticia" id="inp_file">
             <img src="src/img/peep-sitting-11.png" class="peep-sitting-11">
         </div>
       
@@ -82,13 +122,86 @@
             </div>
     </section>
   
-    <section>
-        
+    <section class="section_info" style="background-color: #000;"> 
+        <h1 id="info" style="color: #fff;">Informacion del desarrollo</h1>
+        <div  class=" animado container_info_desarrollo info_1">
+            <div  style="background-image: url('https://newsdata.io/images/global/newsdata-icon.png'); width: 250px; height: 350px; background-position: center; background-repeat: no-repeat; background-size: contain;"></div>
+            <p  >Newsdata.io es la mejor API de noticias basada en JSON que extrae datos de noticias de más de 10 000 fuentes de noticias confiables en más de 45 idiomas y más de 10 categorías. Newsdata.io viene con una función de búsqueda de noticias, que le permite buscar datos de noticias a través de palabras clave, frases y con filtros de búsqueda avanzada puede filtrar datos de noticias según la fecha y la hora, el país, los idiomas y muchos más para obtener noticias útiles. y puede descargar los datos en formato CSV y XLSX.</p>
+        </div>
+
+        <div class=" animado container_info_desarrollo info_2">
+           
+            <p>Una API de REST, o API de RESTful, es una interfaz de programación de aplicaciones (API o API web) que se ajusta a los límites de la arquitectura REST y permite la interacción con los servicios web de RESTful </p>
+
+            <div style="background-image: url('https://miro.medium.com/max/640/0*MI6Cy_YYSexyhB6q'); width: 250px; height: 350px; background-position: center; background-repeat: no-repeat; background-size: contain;" ></div>
+        </div>
+
+        <div class=" animado container_info_desarrollo info_3">
+            <div style="background-image: url('/src/img/jsonCapture.PNG'); width: 250px; height: 350px; background-position: left; background-repeat: no-repeat; background-size: cover;"  ></div>
+            <p>Newsdata nos ofrece la Informacion a traves de un archivo JSON, de esta manera podemos extrar facilmente la Informacion y pintarla en pantalla</p>
+        </div>
+    </section>
+
+    <section id="about" class="container_about">
+        <div class="container_about_info">
+            <h2>Sobre nosotros</h2>
+            <p>Somos un equipo completamente distribuido de 78 personas que viven y trabajan en 21 países alrededor del mundo. Y estamos trabajando para crear los mejores productos para ayudar a nuestros clientes a obtener la información mas rapida del mundo</p>
+                <br>
+            <p>Nos preocupamos por crear un producto de calidad, relaciones de confianza con nuestros clientes y un sentido de comunidad que conecte a nuestros clientes y equipo entre sí.</p>
+        </div>
+
+        <div class="container_persons">
+  
+           
+        </div>
 
     </section>
 
-    <footer>
+    <section id="map_web"  class="section_web_map">
         
+       
+       <div class="img_web"></div>
+        <div class="filter-blur" ></div>
+    </section>
+
+    <section id="contacto" class="section_form">
+        <div class="container_form">
+            
+            <div class="img_form"></div>
+
+            <form action="">
+                <h2>Contáctanos!!</h2>
+                <input type="text" name="" id="" placeholder="Nombre" required>
+                
+                <input type="email" name="" id=""  placeholder="E-mail" required>
+
+                <input type="number" name="" id=""  placeholder="Telefono">
+
+                <textarea name="" id=""  placeholder="Escríbenos!!"></textarea>
+
+                <input type="submit" value="Enviar">
+                
+
+            </form>
+
+
+        </div>
+            
+    </section>
+
+    <footer style="background-color: #000;">
+
+        <ul>
+            <li><a href="">Home</a></li>
+          
+            <li><a href="#noticia">Sé la noticia</a></li>
+            <li><a href="#about">Info</a></li>
+            <li><a href="#info">Desarrollo</a></li>
+            <li><a href="#map_web">Mapa web</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+
+        <p>Página creada por Joaquin Antonio Custodio Díaz &#x1F497 </p>
     </footer>
 </body>
 </html>
